@@ -22,3 +22,6 @@ Separation of concerns- separating each layer of the web application to ensure i
 
 ### React
 Clone from MS Learn [tutorial] (https://github.com/nicolefabian/mslearn-react/tree/main/code/0-starter)
+### Component data and State events
+* Includes tutorial on how to navigate and use component data using map
+* State through useState Hook and spread operator and Events through useEffect
