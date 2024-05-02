@@ -5,8 +5,8 @@ class Car2 {
     private _make: string;
     private _color: string;
     private _doors: number;
-    // ...
-    private worker(): string {
+    //protected -> allows for subclasses of the class to use the function
+    protected worker(): string {
         return this._make;
     }
 
@@ -75,3 +75,40 @@ let myCar4 = new Car2('Cool Car Company', 'blue', 2);
 let myCar5 = new Car2('Galaxy Motors', 'blue', 2);
 // Returns 2 since there are two cars added
 console.log(Car2.getNumberOfCars());
+
+
+//-------------------------------------------------------------------------
+class ElectricCar extends Car2 {
+    // Properties unique to ElectricCar
+    private _range: number;
+    // Constructor
+    constructor(make: string, color: string, range: number, doors = 2) {
+        //super() to include parameters from the base class
+        //super keyword executes the constructor of the base class when it runs
+        super(make, color, doors);
+        this._range = range;
+    }
+    // Accessors
+    get range() {
+        return this._range;
+    }
+    set range(range) {
+        this._range = range;
+    }
+    // Methods
+    charge() {
+        console.log(this.worker() + " is charging.")
+    }
+
+    // Overrides the brake method of the Car class
+    brake(): string {
+        return `${this.worker()}  is braking with the regenerative braking system.`
+    }
+}
+
+let spark = new ElectricCar('Spark Motors','silver', 124, 2);
+let eCar = new ElectricCar('Electric Car Co.', 'black', 263);
+console.log("Extends:")
+console.log(eCar.doors);         // returns the default, 2
+spark.charge();                  // returns "Spark Motors is charging"
+console.log(spark.brake());  // returns "Spark Motors is braking with the regenerative braking system"
