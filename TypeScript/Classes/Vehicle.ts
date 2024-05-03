@@ -1,4 +1,14 @@
-class Car2 {
+interface Vehicle {
+    //can only can contain public
+    make: string
+    color: string;
+    doors: number;
+    accelerate(speed: number): string;
+    brake(): string;
+    turn(direction: 'left' | 'right'): string;
+}
+
+class Car3 implements Vehicle {
     // Properties -> raw data that is passed to the object when it's initialized
     private static numberOfCars: number = 0;  // New static property
     private _make: string;
@@ -15,7 +25,7 @@ class Car2 {
         this._make = make;
         this._color = color;
         this._doors = doors; // Assign the value if provided, otherwise it will be undefined
-        Car2.numberOfCars++; // Increments the value of the static property
+        Car3.numberOfCars++; // Increments the value of the static property
     }
     // Accessors
     get make() {
@@ -61,7 +71,7 @@ class Car2 {
     }
 
     public static getNumberOfCars(): number {
-        return Car2.numberOfCars;
+        return Car3.numberOfCars;
     }
 }
 
@@ -69,45 +79,8 @@ class Car2 {
 
 
 // Instantiate the Car object with all parameters
-let myCar4 = new Car2('Cool Car Company', 'blue', 2);
+let myCar6 = new Car3('Cool Car Company', 'blue', 2);
 // Instantiates the Car object with all parameters
-let myCar5 = new Car2('Galaxy Motors', 'blue', 2);
+let myCar7 = new Car3('Galaxy Motors', 'blue', 2);
 // Returns 2 since there are two cars added
-console.log(Car2.getNumberOfCars());
-
-
-//-------------------------------------------------------------------------
-class ElectricCar extends Car2 {
-    // Properties unique to ElectricCar
-    private _range: number;
-    // Constructor
-    constructor(make: string, color: string, range: number, doors = 2) {
-        //super() to include parameters from the base class
-        //super keyword executes the constructor of the base class when it runs
-        super(make, color, doors);
-        this._range = range;
-    }
-    // Accessors
-    get range() {
-        return this._range;
-    }
-    set range(range) {
-        this._range = range;
-    }
-    // Methods
-    charge() {
-        console.log(this.worker() + " is charging.")
-    }
-
-    // Overrides the brake method of the Car class
-    brake(): string {
-        return `${this.worker()}  is braking with the regenerative braking system.`
-    }
-}
-
-let spark = new ElectricCar('Spark Motors','silver', 124, 2);
-let eCar = new ElectricCar('Electric Car Co.', 'black', 263);
-console.log("Extends:")
-console.log(eCar.doors);         // returns the default, 2
-spark.charge();                  // returns "Spark Motors is charging"
-console.log(spark.brake());  // returns "Spark Motors is braking with the regenerative braking system"
+console.log(Car3.getNumberOfCars());
