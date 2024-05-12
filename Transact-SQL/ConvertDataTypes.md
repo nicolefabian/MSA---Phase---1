@@ -53,7 +53,7 @@ FROM Sales.Customer;
 ### COALESCE
 - allows to provide multiple expressions and returns the first one that is not NULL
 - can take a variable number of arguments, each of which is an expression. It evaluates these expressions in order and returns the value of the first expression that is not NULL.
-```
+```sql
 SELECT 
     EmployeeID,
     //if any of the tables(HourlyRate, WeeklySalary, Commission * SalesQty) is null, returns the value of the first non-NULL expression among the three
@@ -64,7 +64,7 @@ FROM
 
 ### NULLIF
 - takes two arguments and returns NULL if they're equivalent. If they aren't equal, NULLIF returns the first argument.
-```
+```sql
 SELECT SalesOrderID,
       ProductID,
       UnitPrice,
