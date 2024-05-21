@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 //allows to inject an instance of PizzaContext into otherparts of the app
 //Add pizza context
 builder.Services.AddSqlite<PizzaContext>("Data Source=ContosoPizza.db");//dfines SQLite connection string pointing to local file ContossoPizza.db
-
+builder.Services.AddSqlite<PromotionsContext>("Data Source=Promotions/Promotions.db"); //adding Promotions.db
 
 // Add the PromotionsContext
 
@@ -33,6 +33,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Add the CreateDbIfNotExists method call
+app.CreateDbIfNotExists();
 
 app.MapGet("/", () => @"Contoso Pizza management API. Navigate to /swagger to open the Swagger test UI.");
 
