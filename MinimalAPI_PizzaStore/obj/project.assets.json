@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicol\\OneDrive\\Desktop\\MSA\\MSA-Phase-1\\PizzaStore\\PizzaStore.csproj",
+      "projectUniqueName": "C:\\Users\\nicol\\OneDrive\\Desktop\\MSA\\MSA-Phase-1\\MinimalAPI_PizzaStore\\PizzaStore.csproj",
       "projectName": "PizzaStore",
-      "projectPath": "C:\\Users\\nicol\\OneDrive\\Desktop\\MSA\\MSA-Phase-1\\PizzaStore\\PizzaStore.csproj",
+      "projectPath": "C:\\Users\\nicol\\OneDrive\\Desktop\\MSA\\MSA-Phase-1\\MinimalAPI_PizzaStore\\PizzaStore.csproj",
       "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicol\\OneDrive\\Desktop\\MSA\\MSA-Phase-1\\PizzaStore\\obj\\",
+      "outputPath": "C:\\Users\\nicol\\OneDrive\\Desktop\\MSA\\MSA-Phase-1\\MinimalAPI_PizzaStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
